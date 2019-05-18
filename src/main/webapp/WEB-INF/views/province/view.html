@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>View province</title>
+  <style>
+    table {
+      color: #333; /* Lighten up font color */
+      font-family: Helvetica, Arial, sans-serif; /* Nicer font */
+      width: 640px;
+      border-collapse:
+              collapse; border-spacing: 0;
+    }
+
+    td, th { border: 1px solid #CCC; height: 30px; } /* Make cells a bit taller */
+
+    th {
+      background: #F3F3F3; /* Light grey background */
+      font-weight: bold; /* Make sure they're bold */
+    }
+
+    td {
+      background: #FAFAFA; /* Lighter grey background */
+      text-align: center; /* Center our text */
+    }
+  </style>
+</head>
+<body>
+<h1>View province: <span th:text="${province.name}"></span></h1>
+<a href="/provinces">Province list</a>
+<table border="1">
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+  </tr>
+  <th:block th:each="customer : ${customers}">
+    <tr>
+      <td th:text="${customer.firstName}"></td>
+      <td th:text="${customer.lastName}"></td>
+    </tr>
+  </th:block>
+</table>
+</body>
+</html>
